@@ -1,0 +1,22 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Product Form</title>
+</head>
+<body>
+<form method="post" action="/product/">
+    {% csrf_token %}
+    {{ product_form }}
+    <button type="submit">Submit</button>
+    </form>
+<ul>
+{% if product_list is not None %}
+    {% for product in product_list %}
+        <li>{{ product.get_full_description }}</li>
+    {% endfor %}
+{% endif %}
+</ul>
+</body>
+</html>
