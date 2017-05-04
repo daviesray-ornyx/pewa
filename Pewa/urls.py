@@ -15,11 +15,13 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
-from RestApp.views import *
+from PewaApp.views import *
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^vendor/$', VendorView.as_view()),
     url(r'^product/$', ProductView.as_view()),
-    url(r'^api/rest/', include("RestApp.api.urls", namespace='rest-api'))
+    url(r'^api/vendors/', include("PewaApp.vendors.api.urls", namespace='vendor-api')),
+    url(r'^api/accounts/', include("PewaApp.accounts.api.urls", namespace='accounts-api')),
+    url(r'^auth/', include('rest_framework_social_oauth2.urls')),
 ]

@@ -5,9 +5,10 @@ from django.shortcuts import render
 from django.views import View
 from django.shortcuts import HttpResponse, Http404, HttpResponseRedirect,HttpResponsePermanentRedirect
 
-from RestApp.forms import *
-from RestApp.models import *
+from PewaApp.forms import *
+from PewaApp.models import *
 # Create your views here.
+
 
 class VendorView(View):
 

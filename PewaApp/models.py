@@ -128,6 +128,7 @@ class NotificationType(models.Model):
 
 
 class Vendor(models.Model):
+    user = models.ForeignKey(User, blank=True, null=True, default=1, related_name='+')
     name = models.CharField(max_length=200, verbose_name='Vendor name', null=False, blank=True)
     slug = AutoSlugField(populate_from='name', unique=True, always_update=False, auto_created=True)
     phone_number = models.CharField(max_length=12, verbose_name='Phone number', null=True, blank=True)

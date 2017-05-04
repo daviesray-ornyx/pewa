@@ -3,7 +3,7 @@ from __future__ import unicode_literals
 
 from django.contrib import admin
 
-from RestApp.models import *
+from PewaApp.models import *
 
 
 # Register your models here.
